@@ -28,7 +28,7 @@ class TransactionItem: Equatable{
             let randomTransaction = transactionNames.randomElement()!
             
             let randomName = "\(randomTransaction)"
-            let randomValue = Int.random(in: 0..<100)
+            let randomValue = Int.random(in: -50..<100)
             let randomSerialNumber = UUID().uuidString.components(separatedBy: "-").first!
             
             self.init(name: randomName, id: randomSerialNumber, valueInReais: randomValue)
