@@ -59,6 +59,7 @@
 		16831FAF2696847100DA7412 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
 		65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemCell.swift; sourceTree = "<group>"; };
 		65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDialogViewController.swift; sourceTree = "<group>"; };
+		65716F62269B8520003F7FD4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 		16831F6E269664AB00DA7412 = {
 			isa = PBXGroup;
 			children = (
+				65716F62269B8520003F7FD4 /* README.md */,
 				16831F79269664AB00DA7412 /* carteira virtual */,
 				16831F90269664AC00DA7412 /* carteira virtualTests */,
 				16831F9B269664AC00DA7412 /* carteira virtualUITests */,
