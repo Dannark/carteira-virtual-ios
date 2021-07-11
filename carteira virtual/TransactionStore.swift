@@ -13,14 +13,21 @@ class TransactionStore{
     
     init(){
         for _ in 0..<3{
-            createItem()
+            createItemRandom()
         }
     }
     
-    @discardableResult func createItem() -> TransactionItem{
+    func createItemRandom(){
         let newItem = TransactionItem(random: true)
         
         //itemList.append(newItem)
+        itemList.insert(newItem, at: 0)
+        
+    }
+    
+    @discardableResult func createItem(name: String, valueInReais: Int, dateCreated: Date) -> TransactionItem{
+        let newItem = TransactionItem(name: name, valueInReais: valueInReais, dateCreated: dateCreated)
+        
         itemList.insert(newItem, at: 0)
         
         return newItem

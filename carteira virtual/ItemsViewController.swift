@@ -20,16 +20,6 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
-//        let newItem = transactionStore.createItem()
-//
-//        if let index = transactionStore.itemList.firstIndex(of: newItem) {
-//            let indexPath = IndexPath(row: index, section: 0)
-//
-//            tableView.insertRows(at: [indexPath], with: .automatic)
-//        }
-//
-//        updateTotalValue()
-        
         TransactionDialogViewController.showPopup(parentVC: self)
     }
     
@@ -43,21 +33,6 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
             sender.setTitle("Done", for: .normal)
             
             setEditing(true, animated: true)
-        }
-    }
-    
-    func updateTotalValue(){
-        var currentTotal = 0
-        for item in transactionStore.itemList{
-            currentTotal += item.valueInReais
-        }
-        totalLabel.text = "\(currentTotal),00"
-        
-        if currentTotal < 0{
-            totalLabel?.textColor = UIColor.red
-        }
-        else{
-            totalLabel?.textColor = UIColor.black
         }
     }
     
@@ -99,14 +74,38 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         }
     }
     
-    func handleAction(action: Bool) {
-    //opening a link to the app store if the user clickes on the go to app store button
-        if (action) {
-            print("button clicked")
-          }
-       }
+    func handleAction(name: String, value: Int, date: Date) {
+        createNewRow(name: name, value: value, date: date)
+    }
     
 //    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
 //        transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
 //    }
+    
+    private func createNewRow(name: String, value: Int, date: Date){
+        let newItem = transactionStore.createItem(name: name, valueInReais: value, dateCreated: date)
+
+        if let index = transactionStore.itemList.firstIndex(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+
+        updateTotalValue()
+    }
+    
+    private func updateTotalValue(){
+        var currentTotal = 0
+        for item in transactionStore.itemList{
+            currentTotal += item.valueInReais
+        }
+        totalLabel.text = "\(currentTotal),00"
+        
+        if currentTotal < 0{
+            totalLabel?.textColor = UIColor.red
+        }
+        else{
+            totalLabel?.textColor = UIColor.black
+        }
+    }
 }

@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-930" y="-573"/>
         </scene>
-        <!--Items View Controller-->
+        <!--Carteira Virtual-->
         <scene sceneID="OIo-mV-zR4">
             <objects>
-                <tableViewController id="WIx-N2-7hC" customClass="ItemsViewController" customModule="carteira_virtual" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Carteira Virtual" id="WIx-N2-7hC" customClass="ItemsViewController" customModule="carteira_virtual" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OsC-dH-ImH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-Vr-AAZ">
-                                <rect key="frame" x="31" y="313" width="352" height="270"/>
+                                <rect key="frame" x="31" y="318" width="352" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$ 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDg-WE-0st">
                                         <rect key="frame" x="30" y="103" width="292" height="34"/>
@@ -166,12 +166,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7E-QR-1bl">
                                         <rect key="frame" x="180" y="222" width="164" height="30"/>
                                         <state key="normal" title="Adicionar"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="jpm-BS-8nx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-lm-6N5">
                                         <rect key="frame" x="8" y="222" width="164" height="30"/>
                                         <state key="normal" title="Cancelar">
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="ry9-Tx-z7A"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -184,7 +190,7 @@
                                     <constraint firstItem="c7E-QR-1bl" firstAttribute="top" secondItem="7A4-bQ-yAp" secondAttribute="bottom" constant="17" id="ECX-P2-hEe"/>
                                     <constraint firstItem="Ta7-lm-6N5" firstAttribute="top" secondItem="7A4-bQ-yAp" secondAttribute="bottom" constant="17" id="Hjn-dO-iAd"/>
                                     <constraint firstAttribute="trailing" secondItem="9xC-gA-vWZ" secondAttribute="trailing" constant="30" id="IEU-vw-deW"/>
-                                    <constraint firstAttribute="height" constant="270" id="Iuu-eg-Etr"/>
+                                    <constraint firstAttribute="height" constant="260" id="Iuu-eg-Etr"/>
                                     <constraint firstItem="s5M-bC-YMv" firstAttribute="centerX" secondItem="8y8-Vr-AAZ" secondAttribute="centerX" id="J0g-dL-yKK"/>
                                     <constraint firstItem="pDg-WE-0st" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="30" id="Vr7-RY-IHq"/>
                                     <constraint firstAttribute="trailing" secondItem="c7E-QR-1bl" secondAttribute="trailing" constant="8" id="ZSG-xI-ZS3"/>
@@ -207,6 +213,7 @@
                     <connections>
                         <outlet property="addButton" destination="c7E-QR-1bl" id="fAW-eP-Z7j"/>
                         <outlet property="cancelButton" destination="Ta7-lm-6N5" id="oLM-7P-xvD"/>
+                        <outlet property="dateField" destination="7A4-bQ-yAp" id="lVb-h0-nOb"/>
                         <outlet property="dialogBoxView" destination="8y8-Vr-AAZ" id="IOq-5K-UEU"/>
                         <outlet property="nameField" destination="9xC-gA-vWZ" id="XGf-cD-1Ey"/>
                         <outlet property="valueField" destination="pDg-WE-0st" id="L3g-jD-YlH"/>

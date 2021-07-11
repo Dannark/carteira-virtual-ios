@@ -14,11 +14,11 @@ class TransactionItem: Equatable{
     var id: String?
     let dateCreated: Date
     
-    init(name: String, id: String?, valueInReais: Int) {
+    init(name: String, valueInReais: Int, dateCreated: Date) {
         self.name = name
         self.valueInReais = valueInReais
-        self.id = id
-        self.dateCreated = Date()
+        self.id = UUID().uuidString.components(separatedBy: "-").first!
+        self.dateCreated = dateCreated
     }
     
     convenience init(random: Bool = false) {
@@ -29,11 +29,10 @@ class TransactionItem: Equatable{
             
             let randomName = "\(randomTransaction)"
             let randomValue = Int.random(in: -50..<100)
-            let randomSerialNumber = UUID().uuidString.components(separatedBy: "-").first!
             
-            self.init(name: randomName, id: randomSerialNumber, valueInReais: randomValue)
+            self.init(name: randomName, valueInReais: randomValue, dateCreated: Date())
         } else {
-            self.init(name: "", id: nil, valueInReais: 0)
+            self.init(name: "", valueInReais: 0, dateCreated: Date())
         }
     }
     

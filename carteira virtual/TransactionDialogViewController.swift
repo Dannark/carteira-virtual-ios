@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PopUpDelegate {
-    func handleAction(action: Bool)
+    func handleAction(name: String, value: Int, date: Date)
 }
 
 class TransactionDialogViewController: UIViewController {
@@ -23,6 +23,7 @@ class TransactionDialogViewController: UIViewController {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var valueField: UITextField!
+    @IBOutlet var dateField: UIDatePicker!
     
     //MARK:- lifecyle methods for the view controller
     override func viewDidLoad() {
@@ -42,11 +43,22 @@ class TransactionDialogViewController: UIViewController {
 //        gotoStoreButton.layer.borderColor = UIColor(named: "primaryBackground")?.cgColor
     }
     //MARK:- outlet functions for the viewController
-    @IBAction func goToStorePressed(_ sender: Any) {
-        self.delegate?.handleAction(action: true)
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+        if nameField.text != nil
+            && valueField.text != nil{
+        
+            let name = nameField.text!
+            let value = Int(valueField.text!)!
+            let date = dateField.date
+            
+            self.delegate?.handleAction(name: name, value: value, date: date)
+        }
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func laterButtonPressed(_ sender: Any) {
+    @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     //MARK:- functions for the viewController
