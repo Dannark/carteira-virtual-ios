@@ -7,7 +7,7 @@
 	
 import UIKit
 
-class ItemsViewController: UITableViewController{
+class ItemsViewController: UITableViewController, PopUpDelegate{
     var transactionStore: TransactionStore = TransactionStore()
     
     @IBOutlet var totalLabel: UILabel!
@@ -20,15 +20,17 @@ class ItemsViewController: UITableViewController{
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
-        let newItem = transactionStore.createItem()
+//        let newItem = transactionStore.createItem()
+//
+//        if let index = transactionStore.itemList.firstIndex(of: newItem) {
+//            let indexPath = IndexPath(row: index, section: 0)
+//
+//            tableView.insertRows(at: [indexPath], with: .automatic)
+//        }
+//
+//        updateTotalValue()
         
-        if let index = transactionStore.itemList.firstIndex(of: newItem) {
-            let indexPath = IndexPath(row: index, section: 0)
-            
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-        
-        updateTotalValue()
+        TransactionDialogViewController.showPopup(parentVC: self)
     }
     
     @IBAction func toggleEditingMode(_ sender: UIButton) {
@@ -50,6 +52,13 @@ class ItemsViewController: UITableViewController{
             currentTotal += item.valueInReais
         }
         totalLabel.text = "\(currentTotal),00"
+        
+        if currentTotal < 0{
+            totalLabel?.textColor = UIColor.red
+        }
+        else{
+            totalLabel?.textColor = UIColor.black
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,12 +67,20 @@ class ItemsViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionItemCell", for: indexPath) as! TransactionItemCell
         
         let item = transactionStore.itemList[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "R$ \(item.valueInReais),00"
+        cell.nameLabel?.text = item.name
+        cell.dataLabel?.text = "\(item.dayAndMonthFormat())"
+        cell.valueLabel?.text = "R$ \(item.valueInReais),00"
+        
+        if item.valueInReais < 0{
+            cell.valueLabel?.textColor = UIColor.red
+        }
+        else{
+            cell.valueLabel?.textColor = UIColor.black
+        }
         
         return cell
     }
@@ -82,7 +99,14 @@ class ItemsViewController: UITableViewController{
         }
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-    }
+    func handleAction(action: Bool) {
+    //opening a link to the app store if the user clickes on the go to app store button
+        if (action) {
+            print("button clicked")
+          }
+       }
+    
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+//    }
 }

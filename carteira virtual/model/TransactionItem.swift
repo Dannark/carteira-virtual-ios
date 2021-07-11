@@ -44,5 +44,19 @@ class TransactionItem: Equatable{
             && lhs.dateCreated == rhs.dateCreated
     }
     
+    func dayAndMonthFormat() -> String {
+        if dateCreated == nil{
+            return "-"
+        }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "pt_BR")
+        //formatter.setLocalizedDateFormatFromTemplate("dd-MM-yyyy")
+        //formatter.dateFormat = "dd-MM-yyyy HH:mm:ss Z"
+        //let datetime = formatter.date(from: "13-03-2020 13:37:00 +0100")
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        
+        return formatter.string(from: dateCreated)
+    }
     
 }

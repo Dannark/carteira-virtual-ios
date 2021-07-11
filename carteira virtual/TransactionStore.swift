@@ -20,7 +20,8 @@ class TransactionStore{
     @discardableResult func createItem() -> TransactionItem{
         let newItem = TransactionItem(random: true)
         
-        itemList.append(newItem)
+        //itemList.append(newItem)
+        itemList.insert(newItem, at: 0)
         
         return newItem
     }
