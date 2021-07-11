@@ -18,6 +18,8 @@
 		16831FAB2696780C00DA7412 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831FAA2696780C00DA7412 /* ItemsViewController.swift */; };
 		16831FAD269681B400DA7412 /* TransactionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831FAC269681B400DA7412 /* TransactionStore.swift */; };
 		16831FB02696847100DA7412 /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831FAF2696847100DA7412 /* TransactionItem.swift */; };
+		65716F5F269B2D66003F7FD4 /* TransactionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */; };
+		65716F61269B6437003F7FD4 /* TransactionDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		16831FAA2696780C00DA7412 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		16831FAC269681B400DA7412 /* TransactionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStore.swift; sourceTree = "<group>"; };
 		16831FAF2696847100DA7412 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
+		65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemCell.swift; sourceTree = "<group>"; };
+		65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDialogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +114,13 @@
 				16831F7A269664AB00DA7412 /* AppDelegate.swift */,
 				16831F7C269664AB00DA7412 /* SceneDelegate.swift */,
 				16831F7E269664AB00DA7412 /* ViewController.swift */,
+				65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */,
 				16831F80269664AB00DA7412 /* Main.storyboard */,
 				16831F83269664AC00DA7412 /* Assets.xcassets */,
 				16831F85269664AC00DA7412 /* LaunchScreen.storyboard */,
 				16831F88269664AC00DA7412 /* Info.plist */,
 				16831FAA2696780C00DA7412 /* ItemsViewController.swift */,
+				65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */,
 			);
 			path = "carteira virtual";
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65716F61269B6437003F7FD4 /* TransactionDialogViewController.swift in Sources */,
+				65716F5F269B2D66003F7FD4 /* TransactionItemCell.swift in Sources */,
 				16831FAD269681B400DA7412 /* TransactionStore.swift in Sources */,
 				16831FB02696847100DA7412 /* TransactionItem.swift in Sources */,
 				16831F7F269664AB00DA7412 /* ViewController.swift in Sources */,
