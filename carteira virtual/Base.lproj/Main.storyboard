@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WIx-N2-7hC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0WJ-LE-6Oq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,21 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="carteira_virtual" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-930" y="-573"/>
-        </scene>
         <!--Carteira Virtual-->
         <scene sceneID="OIo-mV-zR4">
             <objects>
@@ -32,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="jel-oV-YF8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21.550,00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KN2-4e-LJY">
@@ -41,20 +26,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iw8-zn-EhM">
-                                    <rect key="frame" x="8" y="99" width="195" height="30"/>
-                                    <state key="normal" title="Editar"/>
-                                    <connections>
-                                        <action selector="toggleEditingMode:" destination="WIx-N2-7hC" eventType="touchUpInside" id="bWk-z5-pFw"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im5-Jj-Sv1">
-                                    <rect key="frame" x="211" y="99" width="195" height="30"/>
-                                    <state key="normal" title="Adicionar"/>
-                                    <connections>
-                                        <action selector="addNewItem:" destination="WIx-N2-7hC" eventType="touchUpInside" id="xHf-JQ-wXj"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-Uf-a8y">
                                     <rect key="frame" x="66.5" y="56.5" width="21" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,21 +35,15 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="iw8-zn-EhM" firstAttribute="leading" secondItem="jel-oV-YF8" secondAttribute="leading" constant="8" id="5sD-j1-Vw5"/>
-                                <constraint firstItem="Im5-Jj-Sv1" firstAttribute="width" secondItem="iw8-zn-EhM" secondAttribute="width" id="9ua-ms-K9F"/>
                                 <constraint firstItem="KN2-4e-LJY" firstAttribute="top" secondItem="jel-oV-YF8" secondAttribute="top" constant="25" id="Cu6-2m-eKP"/>
                                 <constraint firstItem="KN2-4e-LJY" firstAttribute="centerX" secondItem="jel-oV-YF8" secondAttribute="centerX" id="GkJ-BZ-gri"/>
                                 <constraint firstItem="KN2-4e-LJY" firstAttribute="leading" secondItem="cHu-Uf-a8y" secondAttribute="trailing" constant="8" id="OnX-nD-i1j"/>
-                                <constraint firstAttribute="trailing" secondItem="Im5-Jj-Sv1" secondAttribute="trailing" constant="8" id="WnD-l0-R6m"/>
-                                <constraint firstItem="iw8-zn-EhM" firstAttribute="top" secondItem="KN2-4e-LJY" secondAttribute="bottom" constant="14" id="fTR-Ia-8A1"/>
-                                <constraint firstItem="Im5-Jj-Sv1" firstAttribute="leading" secondItem="iw8-zn-EhM" secondAttribute="trailing" constant="8" id="ijY-ed-7di"/>
-                                <constraint firstItem="Im5-Jj-Sv1" firstAttribute="top" secondItem="KN2-4e-LJY" secondAttribute="bottom" constant="14" id="kNk-Oh-Ntc"/>
                                 <constraint firstItem="cHu-Uf-a8y" firstAttribute="firstBaseline" secondItem="KN2-4e-LJY" secondAttribute="firstBaseline" id="r0t-NG-hdx"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionItemCell" rowHeight="65" id="YCw-Fd-H18" customClass="TransactionItemCell" customModule="carteira_virtual" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="174.5" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="129.5" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YCw-Fd-H18" id="Uy5-9t-zJN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -125,13 +90,20 @@
                             <outlet property="delegate" destination="WIx-N2-7hC" id="ddV-lL-VLx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Minha Carteira" id="qop-dH-qHD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="i2D-4f-CWm">
+                            <connections>
+                                <action selector="addNewItem:" destination="WIx-N2-7hC" id="Rtx-Ui-Cc6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="totalLabel" destination="KN2-4e-LJY" id="kMj-Yo-ZwR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1K-rj-xOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113.04347826086958" y="-573.21428571428567"/>
+            <point key="canvasLocation" x="797.10144927536237" y="-573.21428571428567"/>
         </scene>
         <!--Transaction Dialog View Controller-->
         <scene sceneID="pXE-dz-YZU">
@@ -221,7 +193,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZt-hb-eaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692.75362318840587" y="-573.21428571428567"/>
+            <point key="canvasLocation" x="1602.8985507246377" y="-573.21428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y47-1g-Vr9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0WJ-LE-6Oq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcn-II-7Uv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WIx-N2-7hC" kind="relationship" relationship="rootViewController" id="u8q-eD-kyY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jX-dd-cVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113.04347826086958" y="-573.21428571428567"/>
         </scene>
     </scenes>
     <resources>

@@ -11,11 +11,11 @@ class TransactionStore{
     
     var itemList = [TransactionItem]()
     
-    init(){
-        for _ in 0..<3{
-            createItemRandom()
-        }
-    }
+//    init(){
+//        for _ in 0..<3{
+//            createItemRandom()
+//        }
+//    }
     
     func createItemRandom(){
         let newItem = TransactionItem(random: true)

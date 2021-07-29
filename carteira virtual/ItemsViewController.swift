@@ -10,7 +10,21 @@ import UIKit
 class ItemsViewController: UITableViewController, PopUpDelegate{
     var transactionStore: TransactionStore = TransactionStore()
     
+    let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+    
     @IBOutlet var totalLabel: UILabel!
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,21 +33,8 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         updateTotalValue()
     }
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         TransactionDialogViewController.showPopup(parentVC: self)
-    }
-    
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        if isEditing {
-            
-            sender.setTitle("Editar", for: .normal)
-            
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", for: .normal)
-            
-            setEditing(true, animated: true)
-        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,7 +49,8 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         
         cell.nameLabel?.text = item.name
         cell.dataLabel?.text = "\(item.dayAndMonthFormat())"
-        cell.valueLabel?.text = "R$ \(item.valueInReais),00"
+//        cell.valueLabel?.text = "R$ \(item.valueInReais),00"
+        cell.valueLabel?.text = numberFormatter.string(from: NSNumber(value: item.valueInReais))
         
         if item.valueInReais < 0{
             cell.valueLabel?.textColor = UIColor.red
@@ -78,9 +80,9 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         createNewRow(name: name, value: value, date: date)
     }
     
-//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-//    }
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
     
     private func createNewRow(name: String, value: Int, date: Date){
         let newItem = transactionStore.createItem(name: name, valueInReais: value, dateCreated: date)
