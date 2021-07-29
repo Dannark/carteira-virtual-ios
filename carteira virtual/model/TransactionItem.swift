@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TransactionItem: Equatable{
+class TransactionItem: Equatable, Codable{
     
     var name: String
     var valueInReais: Int
