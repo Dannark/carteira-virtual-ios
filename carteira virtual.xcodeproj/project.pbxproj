@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		16831F7B269664AB00DA7412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831F7A269664AB00DA7412 /* AppDelegate.swift */; };
 		16831F7D269664AB00DA7412 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831F7C269664AB00DA7412 /* SceneDelegate.swift */; };
-		16831F7F269664AB00DA7412 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831F7E269664AB00DA7412 /* ViewController.swift */; };
 		16831F82269664AB00DA7412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16831F80269664AB00DA7412 /* Main.storyboard */; };
 		16831F84269664AC00DA7412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16831F83269664AC00DA7412 /* Assets.xcassets */; };
 		16831F87269664AC00DA7412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16831F85269664AC00DA7412 /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 		16831F77269664AB00DA7412 /* carteira virtual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "carteira virtual.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16831F7A269664AB00DA7412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16831F7C269664AB00DA7412 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16831F7E269664AB00DA7412 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		16831F81269664AB00DA7412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16831F83269664AC00DA7412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16831F86269664AC00DA7412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,19 +111,16 @@
 		16831F79269664AB00DA7412 /* carteira virtual */ = {
 			isa = PBXGroup;
 			children = (
-				16831FAE269681C200DA7412 /* model */,
+				65B9F0A226BC62610054F09A /* transaction dialog */,
+				65B9F09E26BC61780054F09A /* carteira */,
+				65B9F09D26BC60E30054F09A /* map */,
 				16831FAC269681B400DA7412 /* TransactionStore.swift */,
 				16831F7A269664AB00DA7412 /* AppDelegate.swift */,
 				16831F7C269664AB00DA7412 /* SceneDelegate.swift */,
-				16831F7E269664AB00DA7412 /* ViewController.swift */,
-				65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */,
 				16831F80269664AB00DA7412 /* Main.storyboard */,
 				16831F83269664AC00DA7412 /* Assets.xcassets */,
 				16831F85269664AC00DA7412 /* LaunchScreen.storyboard */,
 				16831F88269664AC00DA7412 /* Info.plist */,
-				16831FAA2696780C00DA7412 /* ItemsViewController.swift */,
-				65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */,
-				65B9F09626BC2FF50054F09A /* MapViewController.swift */,
 			);
 			path = "carteira virtual";
 			sourceTree = "<group>";
@@ -148,12 +143,62 @@
 			path = "carteira virtualUITests";
 			sourceTree = "<group>";
 		};
-		16831FAE269681C200DA7412 /* model */ = {
+		65B9F09D26BC60E30054F09A /* map */ = {
+			isa = PBXGroup;
+			children = (
+				65B9F0A126BC62130054F09A /* controllers */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		65B9F09E26BC61780054F09A /* carteira */ = {
+			isa = PBXGroup;
+			children = (
+				65B9F0A026BC61C00054F09A /* models */,
+				65B9F09F26BC61B90054F09A /* controllers */,
+			);
+			path = carteira;
+			sourceTree = "<group>";
+		};
+		65B9F09F26BC61B90054F09A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16831FAA2696780C00DA7412 /* ItemsViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		65B9F0A026BC61C00054F09A /* models */ = {
 			isa = PBXGroup;
 			children = (
 				16831FAF2696847100DA7412 /* TransactionItem.swift */,
+				65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */,
 			);
-			path = model;
+			path = models;
+			sourceTree = "<group>";
+		};
+		65B9F0A126BC62130054F09A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65B9F09626BC2FF50054F09A /* MapViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		65B9F0A226BC62610054F09A /* transaction dialog */ = {
+			isa = PBXGroup;
+			children = (
+				65B9F0A326BC628E0054F09A /* controllers */,
+			);
+			path = "transaction dialog";
+			sourceTree = "<group>";
+		};
+		65B9F0A326BC628E0054F09A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +337,6 @@
 				16831FAD269681B400DA7412 /* TransactionStore.swift in Sources */,
 				16831FB02696847100DA7412 /* TransactionItem.swift in Sources */,
 				65B9F09726BC2FF50054F09A /* MapViewController.swift in Sources */,
-				16831F7F269664AB00DA7412 /* ViewController.swift in Sources */,
 				16831FAB2696780C00DA7412 /* ItemsViewController.swift in Sources */,
 				16831F7B269664AB00DA7412 /* AppDelegate.swift in Sources */,
 				16831F7D269664AB00DA7412 /* SceneDelegate.swift in Sources */,

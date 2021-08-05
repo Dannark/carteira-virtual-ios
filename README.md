@@ -2,6 +2,6 @@
 
 Primeiro Aplicativo da disciplina de IOS
 
-![Simulator Screen Shot - iPhone 12 - 2021-07-11 at 12 58 32](https://user-images.githubusercontent.com/7622553/125208586-4189ba80-e248-11eb-8b1c-d2f32fbc2410.png)
-![Simulator Screen Shot - iPhone 12 - 2021-07-11 at 13 04 28](https://user-images.githubusercontent.com/7622553/125208646-a3e2bb00-e248-11eb-9eec-5055f81b306b.png)
-
+![print1](https://user-images.githubusercontent.com/7622553/128405194-58885d5f-8d37-4e31-9d3a-56e70fcdbade.png)
+![print2](https://user-images.githubusercontent.com/7622553/128405251-214df11d-cd81-42da-a603-3be2851f8f75.png)
+![print3](https://user-images.githubusercontent.com/7622553/128405288-ac2fd3b5-1f81-4ef8-bc2a-7c602e62b996.png)
