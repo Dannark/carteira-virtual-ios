@@ -10,11 +10,11 @@ import Foundation
 class TransactionItem: Equatable, Codable{
     
     var name: String
-    var valueInReais: Int
+    var valueInReais: Double
     var id: String?
     let dateCreated: Date
     
-    init(name: String, valueInReais: Int, dateCreated: Date) {
+    init(name: String, valueInReais: Double, dateCreated: Date) {
         self.name = name
         self.valueInReais = valueInReais
         self.id = UUID().uuidString.components(separatedBy: "-").first!
@@ -28,7 +28,7 @@ class TransactionItem: Equatable, Codable{
             let randomTransaction = transactionNames.randomElement()!
             
             let randomName = "\(randomTransaction)"
-            let randomValue = Int.random(in: -50..<100)
+            let randomValue = Double.random(in: -50..<100)
             
             self.init(name: randomName, valueInReais: randomValue, dateCreated: Date())
         } else {

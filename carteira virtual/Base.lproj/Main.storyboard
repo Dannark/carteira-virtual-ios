@@ -113,64 +113,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-Vr-AAZ">
-                                <rect key="frame" x="31" y="318" width="352" height="260"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-Vr-AAZ">
+                                <rect key="frame" x="31" y="331" width="352" height="226"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="R$ 0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDg-WE-0st">
-                                        <rect key="frame" x="30" y="103" width="292" height="34"/>
+                                        <rect key="frame" x="16" y="95" width="171" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="cc-number"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="nbB-tr-mGj" id="jcS-9F-QOi"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Nova transação" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5M-bC-YMv">
-                                        <rect key="frame" x="110" y="18" width="132" height="23"/>
+                                        <rect key="frame" x="8" y="18" width="336" height="23"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da transação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xC-gA-vWZ">
-                                        <rect key="frame" x="30" y="65" width="292" height="34"/>
+                                        <rect key="frame" x="16" y="57" width="320" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7A4-bQ-yAp">
-                                        <rect key="frame" x="16" y="145" width="320" height="60"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7A4-bQ-yAp">
+                                        <rect key="frame" x="16" y="134" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sXO-T8-nre"/>
+                                        </constraints>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7E-QR-1bl">
-                                        <rect key="frame" x="180" y="222" width="164" height="30"/>
-                                        <state key="normal" title="Adicionar"/>
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="jpm-BS-8nx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-lm-6N5">
-                                        <rect key="frame" x="8" y="222" width="164" height="30"/>
-                                        <state key="normal" title="Cancelar">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="ry9-Tx-z7A"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="center" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Td-YB-xqn">
+                                        <rect key="frame" x="8" y="181" width="336" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7E-QR-1bl">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
+                                                <state key="normal" title="Adicionar"/>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="jpm-BS-8nx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-lm-6N5">
+                                                <rect key="frame" x="168" y="0.0" width="168" height="30"/>
+                                                <state key="normal" title="Cancelar">
+                                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonPressed:" destination="nbB-tr-mGj" eventType="touchUpInside" id="ry9-Tx-z7A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RHa-WZ-H1L">
+                                        <rect key="frame" x="191" y="95" width="145" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="145" id="0hv-IC-6eZ"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Receita"/>
+                                            <segment title="Despesa"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="1Td-YB-xqn" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="8" id="0bX-g3-21S"/>
+                                    <constraint firstAttribute="trailing" secondItem="RHa-WZ-H1L" secondAttribute="trailing" constant="16" id="2tz-Mm-Tlg"/>
                                     <constraint firstItem="s5M-bC-YMv" firstAttribute="top" secondItem="8y8-Vr-AAZ" secondAttribute="top" constant="18" id="63V-Ve-xdp"/>
-                                    <constraint firstItem="c7E-QR-1bl" firstAttribute="width" secondItem="Ta7-lm-6N5" secondAttribute="width" id="AuZ-rP-I4E"/>
-                                    <constraint firstItem="9xC-gA-vWZ" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="30" id="BL4-7t-DJJ"/>
-                                    <constraint firstItem="7A4-bQ-yAp" firstAttribute="centerX" secondItem="8y8-Vr-AAZ" secondAttribute="centerX" id="CCP-uC-CBN"/>
-                                    <constraint firstItem="9xC-gA-vWZ" firstAttribute="top" secondItem="s5M-bC-YMv" secondAttribute="bottom" constant="24" id="DwN-yQ-ctb"/>
-                                    <constraint firstItem="c7E-QR-1bl" firstAttribute="top" secondItem="7A4-bQ-yAp" secondAttribute="bottom" constant="17" id="ECX-P2-hEe"/>
-                                    <constraint firstItem="Ta7-lm-6N5" firstAttribute="top" secondItem="7A4-bQ-yAp" secondAttribute="bottom" constant="17" id="Hjn-dO-iAd"/>
-                                    <constraint firstAttribute="trailing" secondItem="9xC-gA-vWZ" secondAttribute="trailing" constant="30" id="IEU-vw-deW"/>
-                                    <constraint firstAttribute="height" constant="260" id="Iuu-eg-Etr"/>
+                                    <constraint firstItem="RHa-WZ-H1L" firstAttribute="leading" secondItem="pDg-WE-0st" secondAttribute="trailing" constant="4" id="8P8-HL-6un"/>
+                                    <constraint firstItem="9xC-gA-vWZ" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="16" id="BL4-7t-DJJ"/>
+                                    <constraint firstItem="7A4-bQ-yAp" firstAttribute="top" secondItem="pDg-WE-0st" secondAttribute="bottom" constant="5" id="BSN-g3-acK"/>
+                                    <constraint firstItem="9xC-gA-vWZ" firstAttribute="top" secondItem="s5M-bC-YMv" secondAttribute="bottom" constant="16" id="DwN-yQ-ctb"/>
+                                    <constraint firstItem="RHa-WZ-H1L" firstAttribute="top" secondItem="9xC-gA-vWZ" secondAttribute="bottom" constant="4" id="HQW-gO-7D8"/>
+                                    <constraint firstAttribute="trailing" secondItem="9xC-gA-vWZ" secondAttribute="trailing" constant="16" id="IEU-vw-deW"/>
+                                    <constraint firstAttribute="height" constant="226" id="Iuu-eg-Etr"/>
                                     <constraint firstItem="s5M-bC-YMv" firstAttribute="centerX" secondItem="8y8-Vr-AAZ" secondAttribute="centerX" id="J0g-dL-yKK"/>
-                                    <constraint firstItem="pDg-WE-0st" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="30" id="Vr7-RY-IHq"/>
-                                    <constraint firstAttribute="trailing" secondItem="c7E-QR-1bl" secondAttribute="trailing" constant="8" id="ZSG-xI-ZS3"/>
-                                    <constraint firstItem="c7E-QR-1bl" firstAttribute="leading" secondItem="Ta7-lm-6N5" secondAttribute="trailing" constant="8" id="eLF-Wc-jKR"/>
-                                    <constraint firstAttribute="trailing" secondItem="pDg-WE-0st" secondAttribute="trailing" constant="30" id="fRG-q7-jgR"/>
-                                    <constraint firstItem="7A4-bQ-yAp" firstAttribute="top" secondItem="pDg-WE-0st" secondAttribute="bottom" constant="8" id="jZr-XW-Tdg"/>
+                                    <constraint firstItem="pDg-WE-0st" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="16" id="Vr7-RY-IHq"/>
+                                    <constraint firstItem="s5M-bC-YMv" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="8" id="fVk-Xn-Eeq"/>
+                                    <constraint firstItem="7A4-bQ-yAp" firstAttribute="centerX" secondItem="8y8-Vr-AAZ" secondAttribute="centerX" id="hb0-g9-R6r"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Td-YB-xqn" secondAttribute="trailing" constant="8" id="i7S-gU-iJ1"/>
+                                    <constraint firstItem="1Td-YB-xqn" firstAttribute="top" secondItem="7A4-bQ-yAp" secondAttribute="bottom" constant="7" id="m6d-lO-XGC"/>
                                     <constraint firstItem="pDg-WE-0st" firstAttribute="top" secondItem="9xC-gA-vWZ" secondAttribute="bottom" constant="4" id="rcR-x6-TDb"/>
-                                    <constraint firstItem="Ta7-lm-6N5" firstAttribute="leading" secondItem="8y8-Vr-AAZ" secondAttribute="leading" constant="8" id="z9M-ef-3za"/>
+                                    <constraint firstAttribute="trailing" secondItem="s5M-bC-YMv" secondAttribute="trailing" constant="8" id="uoS-4k-dMG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -188,6 +210,7 @@
                         <outlet property="dateField" destination="7A4-bQ-yAp" id="lVb-h0-nOb"/>
                         <outlet property="dialogBoxView" destination="8y8-Vr-AAZ" id="IOq-5K-UEU"/>
                         <outlet property="nameField" destination="9xC-gA-vWZ" id="XGf-cD-1Ey"/>
+                        <outlet property="transactionType" destination="RHa-WZ-H1L" id="oKe-ij-bft"/>
                         <outlet property="valueField" destination="pDg-WE-0st" id="L3g-jD-YlH"/>
                     </connections>
                 </viewController>

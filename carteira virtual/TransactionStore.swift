@@ -43,7 +43,7 @@ class TransactionStore{
         
     }
     
-    @discardableResult func createItem(name: String, valueInReais: Int, dateCreated: Date) -> TransactionItem{
+    @discardableResult func createItem(name: String, valueInReais: Double, dateCreated: Date) -> TransactionItem{
         let newItem = TransactionItem(name: name, valueInReais: valueInReais, dateCreated: dateCreated)
         
         itemList.insert(newItem, at: 0)

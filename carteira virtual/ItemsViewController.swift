@@ -76,7 +76,7 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         }
     }
     
-    func handleAction(name: String, value: Int, date: Date) {
+    func handleAction(name: String, value: Double, date: Date) {
         createNewRow(name: name, value: value, date: date)
     }
     
@@ -84,7 +84,7 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    private func createNewRow(name: String, value: Int, date: Date){
+    private func createNewRow(name: String, value: Double, date: Date){
         let newItem = transactionStore.createItem(name: name, valueInReais: value, dateCreated: date)
 
         if let index = transactionStore.itemList.firstIndex(of: newItem) {
@@ -97,11 +97,11 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
     }
     
     private func updateTotalValue(){
-        var currentTotal = 0
+        var currentTotal = 0.0
         for item in transactionStore.itemList{
             currentTotal += item.valueInReais
         }
-        totalLabel.text = "\(currentTotal),00"
+        totalLabel.text = numberFormatter.string(from: NSNumber(value: currentTotal))
         
         if currentTotal < 0{
             totalLabel?.textColor = UIColor.red
