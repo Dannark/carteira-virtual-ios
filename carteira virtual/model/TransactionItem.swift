@@ -13,12 +13,16 @@ class TransactionItem: Equatable, Codable{
     var valueInReais: Double
     var id: String?
     let dateCreated: Date
+    var lat: Double?
+    var long: Double?
     
-    init(name: String, valueInReais: Double, dateCreated: Date) {
+    init(name: String, valueInReais: Double, dateCreated: Date, lat: Double?, long: Double?) {
         self.name = name
         self.valueInReais = valueInReais
         self.id = UUID().uuidString.components(separatedBy: "-").first!
         self.dateCreated = dateCreated
+        self.lat = lat
+        self.long = long
     }
     
     convenience init(random: Bool = false) {
@@ -30,9 +34,9 @@ class TransactionItem: Equatable, Codable{
             let randomName = "\(randomTransaction)"
             let randomValue = Double.random(in: -50..<100)
             
-            self.init(name: randomName, valueInReais: randomValue, dateCreated: Date())
+            self.init(name: randomName, valueInReais: randomValue, dateCreated: Date(), lat: 37.785834, long: 122.406417)
         } else {
-            self.init(name: "", valueInReais: 0, dateCreated: Date())
+            self.init(name: "", valueInReais: 0, dateCreated: Date(), lat: nil, long: nil)
         }
     }
     

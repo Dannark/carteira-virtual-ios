@@ -68,7 +68,6 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         if editingStyle == .delete {
             let item = transactionStore.itemList[indexPath.row]
 
-            // remover o item da store
             transactionStore.removeItem(item)
 
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -76,16 +75,17 @@ class ItemsViewController: UITableViewController, PopUpDelegate{
         }
     }
     
-    func handleAction(name: String, value: Double, date: Date) {
-        createNewRow(name: name, value: value, date: date)
+    func handleAction(name: String, value: Double, date: Date, lat: Double?, long: Double?) {
+        transactionStore.saveChanges()
+        createNewRow(name: name, value: value, date: date, lat: lat, long: long)
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         transactionStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    private func createNewRow(name: String, value: Double, date: Date){
-        let newItem = transactionStore.createItem(name: name, valueInReais: value, dateCreated: date)
+    private func createNewRow(name: String, value: Double, date: Date, lat: Double?, long: Double?){
+        let newItem = transactionStore.createItem(name: name, valueInReais: value, dateCreated: date, lat: lat, long: long)
 
         if let index = transactionStore.itemList.firstIndex(of: newItem) {
             let indexPath = IndexPath(row: index, section: 0)

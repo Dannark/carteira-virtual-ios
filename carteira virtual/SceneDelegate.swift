@@ -20,9 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         transactionStore = TransactionStore()
         
-        let navViewController = window?.rootViewController as! UINavigationController
-        let itemViewController = navViewController.topViewController as! ItemsViewController
+        let tabBar = window?.rootViewController as! UITabBarController
+        let navViewControllerTab1 = tabBar.viewControllers?[0] as! UINavigationController
+        let itemViewController = navViewControllerTab1.topViewController as! ItemsViewController
         itemViewController.transactionStore = transactionStore!
+        
+        let navViewControllerTab2 = tabBar.viewControllers?[1] as! UINavigationController
+        let mapViewController = navViewControllerTab2.topViewController as! MapViewController
+        mapViewController.transactionStore = transactionStore!
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

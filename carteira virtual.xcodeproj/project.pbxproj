@@ -20,6 +20,7 @@
 		16831FB02696847100DA7412 /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16831FAF2696847100DA7412 /* TransactionItem.swift */; };
 		65716F5F269B2D66003F7FD4 /* TransactionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */; };
 		65716F61269B6437003F7FD4 /* TransactionDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */; };
+		65B9F09726BC2FF50054F09A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B9F09626BC2FF50054F09A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemCell.swift; sourceTree = "<group>"; };
 		65716F60269B6437003F7FD4 /* TransactionDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDialogViewController.swift; sourceTree = "<group>"; };
 		65716F62269B8520003F7FD4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65B9F09626BC2FF50054F09A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				16831F88269664AC00DA7412 /* Info.plist */,
 				16831FAA2696780C00DA7412 /* ItemsViewController.swift */,
 				65716F5E269B2D66003F7FD4 /* TransactionItemCell.swift */,
+				65B9F09626BC2FF50054F09A /* MapViewController.swift */,
 			);
 			path = "carteira virtual";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				TargetAttributes = {
 					16831F76269664AB00DA7412 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					16831F8C269664AC00DA7412 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -287,6 +291,7 @@
 				65716F5F269B2D66003F7FD4 /* TransactionItemCell.swift in Sources */,
 				16831FAD269681B400DA7412 /* TransactionStore.swift in Sources */,
 				16831FB02696847100DA7412 /* TransactionItem.swift in Sources */,
+				65B9F09726BC2FF50054F09A /* MapViewController.swift in Sources */,
 				16831F7F269664AB00DA7412 /* ViewController.swift in Sources */,
 				16831FAB2696780C00DA7412 /* ItemsViewController.swift in Sources */,
 				16831F7B269664AB00DA7412 /* AppDelegate.swift in Sources */,
@@ -466,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "carteira virtual/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,6 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dannark.carteira-virtual";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "carteira virtual/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
