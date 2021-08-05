@@ -8,6 +8,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="WpP-tA-EFJ">
+            <objects>
+                <viewController id="LhH-KQ-YyU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cxi-yl-B0G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="72F-ML-DGn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nE-k7-kzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797" y="78"/>
+        </scene>
         <!--Carteira Virtual-->
         <scene sceneID="OIo-mV-zR4">
             <objects>
@@ -42,27 +57,27 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionItemCell" rowHeight="65" id="YCw-Fd-H18" customClass="TransactionItemCell" customModule="carteira_virtual" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="129.5" width="414" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionItemCell" id="YCw-Fd-H18" customClass="TransactionItemCell" customModule="carteira_virtual" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="129.5" width="414" height="87.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YCw-Fd-H18" id="Uy5-9t-zJN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber Uber " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UM-6RF">
-                                            <rect key="frame" x="20" y="11" width="88.5" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber Uber Uber Uber Uber Uber Uber Uber " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UM-6RF">
+                                            <rect key="frame" x="20" y="11" width="284" height="43"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="08/02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Iq-Uj-U4k">
-                                            <rect key="frame" x="20" y="40.5" width="31.5" height="13.5"/>
+                                            <rect key="frame" x="20" y="62" width="31.5" height="14.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 125,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8Y-82-NB0">
-                                            <rect key="frame" x="317.5" y="23" width="76.5" height="19.5"/>
+                                            <rect key="frame" x="317.5" y="34" width="76.5" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -71,6 +86,7 @@
                                     <constraints>
                                         <constraint firstItem="Z9p-UM-6RF" firstAttribute="leading" secondItem="Uy5-9t-zJN" secondAttribute="leadingMargin" id="4RT-4b-liI"/>
                                         <constraint firstItem="7Iq-Uj-U4k" firstAttribute="leading" secondItem="Z9p-UM-6RF" secondAttribute="leading" id="6Dn-la-LjN"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z9p-UM-6RF" secondAttribute="trailing" constant="110" id="T21-Qf-Fx0"/>
                                         <constraint firstItem="Z9p-UM-6RF" firstAttribute="top" secondItem="Uy5-9t-zJN" secondAttribute="topMargin" id="dM8-TP-oHJ"/>
                                         <constraint firstItem="7Iq-Uj-U4k" firstAttribute="bottom" secondItem="Uy5-9t-zJN" secondAttribute="bottomMargin" id="knS-Oe-x2k"/>
                                         <constraint firstAttribute="trailing" secondItem="b8Y-82-NB0" secondAttribute="trailing" constant="20" symbolic="YES" id="naY-6Z-LvZ"/>
@@ -234,7 +250,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jX-dd-cVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113.04347826086958" y="-573.21428571428567"/>
+            <point key="canvasLocation" x="-332" y="-177"/>
         </scene>
     </scenes>
     <resources>
